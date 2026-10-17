@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayush Singh Shivanshu | Computer Science Student</title>
+<meta name="description" content="Portfolio of Ayush Singh Shivanshu: network tools, full-stack apps and database projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5FA; --surface:#E6ECF6; --ink:#13203B; --muted:#55657E; --line:#C9D4E6; --accent:#2850E8; --accent-ink:#FFFFFF;
+  --bar1:#2850E8; --bar2:#7C96F2; --bar3:#BCCBF8;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1729; --surface:#18233D; --ink:#E8EDF8; --muted:#9AA9C4; --line:#2A3858; --accent:#7C96F2; --accent-ink:#0F1729;
+    --bar1:#7C96F2; --bar2:#4A64C2; --bar3:#2C3C72; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1729; --surface:#18233D; --ink:#E8EDF8; --muted:#9AA9C4; --line:#2A3858; --accent:#7C96F2; --accent-ink:#0F1729;
+  --bar1:#7C96F2; --bar2:#4A64C2; --bar3:#2C3C72; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;margin:0;line-height:1.1}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero h1{font-size:clamp(2.6rem,8.5vw,5.2rem);font-weight:700;letter-spacing:-.03em}
+.hero p.lead{font-size:clamp(1.1rem,2.4vw,1.35rem);max-width:34em;margin:22px 0 0;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;border:1.5px solid var(--ink);text-decoration:none;font-weight:600;font-size:.95rem}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{background:var(--surface)} .btn.primary:hover{filter:brightness(1.08);background:var(--accent)}
+
+/* traffic strip: the one memorable element */
+.traffic{display:flex;align-items:flex-end;gap:4px;height:72px;margin-top:48px;padding-bottom:10px;border-bottom:1.5px solid var(--ink)}
+.traffic i{flex:1;min-width:0;border-radius:2px 2px 0 0;background:var(--bar1);height:var(--h);transform-origin:bottom;animation:rise .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--n)*18ms)}
+.traffic i.b{background:var(--bar2)} .traffic i.c{background:var(--bar3)}
+@keyframes rise{from{transform:scaleY(.04);opacity:.3}to{transform:scaleY(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.traffic i{animation:none}html{scroll-behavior:auto}}
+
+section{padding:48px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.6rem,4vw,2.1rem);letter-spacing:-.02em;margin-bottom:28px}
+
+/* projects */
+.proj{display:grid;grid-template-columns:150px 1fr;gap:8px 32px;padding:26px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.when{color:var(--muted);font-size:.92rem;padding-top:6px}
+.proj h3{font-size:1.45rem;letter-spacing:-.01em}
+.proj ul{margin:12px 0 0;padding-left:1.1em}
+.proj li{margin:6px 0;max-width:62ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.tags li{margin:0;padding:3px 12px;border-radius:999px;background:var(--surface);font-size:.85rem}
+.proj .src{display:inline-block;margin-top:14px;font-weight:600}
+
+/* experience, skills */
+.row{display:grid;grid-template-columns:150px 1fr;gap:8px 32px;margin-bottom:26px}
+.row h3{font-size:1.2rem}
+.row p{margin:4px 0 0;max-width:62ch}
+.skills{display:grid;grid-template-columns:150px 1fr;gap:12px 32px;margin:0}
+.skills dt{font-weight:600} .skills dd{margin:0;color:var(--muted)}
+
+/* contact */
+.contact h2{font-size:clamp(2rem,6vw,3.4rem)}
+.contact p{max-width:36em;color:var(--muted);margin:0 0 24px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .hero{padding-top:48px}
+  .proj,.row,.skills{grid-template-columns:1fr;gap:4px}
+  .when{padding-top:0}
+  .skills dd{margin-bottom:10px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <h1>Ayush Singh </h1>
+    <p class="lead">Computer science student at the University of Lucknow. I build networking tools, full-stack apps and database systems, and I like writing the low-level parts myself to understand how they work.</p>
+    <div class="links">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="https://github.com/ayushsinghshivanshu">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/ayushsinghshivanshu">LinkedIn</a>
+    </div>
+    <div class="traffic" id="traffic" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main>
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+
+    <article class="proj">
+      <div class="when">Oct. 2026 to present</div>
+      <div>
+        <h3>Network Traffic Analyzer</h3>
+        <ul>
+          <li>Python tool that parses PCAP captures to show protocol distribution, packet statistics, top talkers and traffic trends.</li>
+          <li>Custom packet parser for Ethernet, IP, TCP, UDP and ICMP headers, written without external networking libraries.</li>
+          <li>Matplotlib charts (traffic timeline, protocol share, packet-size distribution) with CSV export.</li>
+          <li>Port-scan detection that flags sources sending SYN packets to many unique targets.</li>
+        </ul>
+        <ul class="tags"><li>Python</li><li>Matplotlib</li><li>TCP/IP</li><li>PCAP</li></ul>
+        <a class="src" href="https://github.com/ayushsinghshivanshu/network_traffic_analyer">View on GitHub</a>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="when">Jun. 2026 to Jul. 2026</div>
+      <div>
+        <h3>Smart Complaint Management System</h3>
+        <ul>
+          <li>Handles complaint registration, tracking, assignment and resolution in one system.</li>
+          <li>Database design for users, complaints and status history, with status tracking and admin management features.</li>
+        </ul>
+        <ul class="tags"><li>DBMS</li><li>SQL</li><li>Admin tools</li></ul>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="when">Jan. 2026 to May 2026</div>
+      <div>
+        <h3>aiChatBot</h3>
+        <ul>
+          <li>Full-stack AI chat app with a React frontend and Express backend, connected to DeepSeek, Gemini, Groq and HuggingFace, with Google OAuth sign-in.</li>
+          <li>Layered memory (session, long-term, persona, policy and summary) that keeps context across conversations.</li>
+          <li>MySQL-backed chat history and REST APIs, with a sidebar to group, rename and delete chats and automatic titles.</li>
+          <li>Streaming replies, syntax highlighting and in-browser code execution.</li>
+        </ul>
+        <ul class="tags"><li>React</li><li>Express</li><li>MySQL</li><li>OAuth</li></ul>
+        <a class="src" href="https://github.com/ayushsinghshivanshu/aiChatbot">View on GitHub</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="background">
+  <div class="wrap">
+    <h2>Background</h2>
+    <div class="row">
+      <div class="when">Jun. 2025 to Jul. 2025</div>
+      <div><h3>IT Intern, C&amp;S Electronics</h3><p>Database management, maintenance and organization of company data with the IT department in Noida.</p></div>
+    </div>
+    <div class="row">
+      <div class="when">Expected 2027</div>
+      <div><h3>University of Lucknow</h3><p>Computer Science.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>Python, Java, C</dd>
+      <dt>Web and data</dt><dd>React, Express, REST APIs, MySQL, DBMS</dd>
+      <dt>Fundamentals</dt><dd>Data structures, algorithm analysis, object-oriented programming, networking protocols</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>I'm open to internships and projects. Email is the quickest way to reach me.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:ayushsinghshivanshu@gmail.com">ayushsinghshivanshu@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/ayushsinghshivanshu">LinkedIn</a>
+      <a class="btn" href="https://github.com/ayushsinghshivanshu">GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Ayush Singh Shivanshu, Lucknow, India</div></footer>
+
+<script>
+(function(){
+  var el=document.getElementById('traffic'),seed=7,html='';
+  function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+  for(var i=0;i<56;i++){
+    var burst=(i%19===11||i%23===5)?1:0;
+    var h=burst?70+rnd()*30:14+rnd()*48;
+    var c=rnd();
+    html+='<i class="'+(c>.82?'c':c>.5?'b':'')+'" style="--h:'+h.toFixed(0)+'%;--n:'+i+'"></i>';
+  }
+  el.innerHTML=html;
+})();
+</script>
+</body>
+</html>
